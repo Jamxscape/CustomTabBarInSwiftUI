@@ -12,6 +12,7 @@
 		45FD0AFB2548C6CB00F4C892 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45FD0AFA2548C6CB00F4C892 /* ContentView.swift */; };
 		45FD0AFD2548C6CC00F4C892 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD0AFC2548C6CC00F4C892 /* Assets.xcassets */; };
 		45FD0B002548C6CC00F4C892 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 45FD0AFF2548C6CC00F4C892 /* Preview Assets.xcassets */; };
+		7C6088C62624942100BF89E6 /* FirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6088C52624942100BF89E6 /* FirstView.swift */; };
 		7CD99ADC261F5B5800AC1D14 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CD99ADB261F5B5800AC1D14 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		45FD0AFC2548C6CC00F4C892 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		45FD0AFF2548C6CC00F4C892 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		45FD0B012548C6CC00F4C892 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C6088C52624942100BF89E6 /* FirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstView.swift; sourceTree = "<group>"; };
 		7CD99ADB261F5B5800AC1D14 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +61,7 @@
 				45FD0AF82548C6CB00F4C892 /* CustomTabBarApp.swift */,
 				45FD0AFA2548C6CB00F4C892 /* ContentView.swift */,
 				7CD99ADB261F5B5800AC1D14 /* HomeView.swift */,
+				7C6088C52624942100BF89E6 /* FirstView.swift */,
 				45A107AB254B129200F326EB /* ViewRouter.swift */,
 				45FD0AFC2548C6CC00F4C892 /* Assets.xcassets */,
 				45FD0B012548C6CC00F4C892 /* Info.plist */,
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				45A107AC254B129200F326EB /* ViewRouter.swift in Sources */,
+				7C6088C62624942100BF89E6 /* FirstView.swift in Sources */,
 				7CD99ADC261F5B5800AC1D14 /* HomeView.swift in Sources */,
 				45FD0AFB2548C6CB00F4C892 /* ContentView.swift in Sources */,
 				45FD0AF92548C6CB00F4C892 /* CustomTabBarApp.swift in Sources */,

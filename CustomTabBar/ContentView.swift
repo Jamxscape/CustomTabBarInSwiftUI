@@ -6,20 +6,22 @@
 // Visit BLCKBIRDS.COM FOR MORE TUTORIALS
 
 import SwiftUI
-
+class tabViewModel: ObservableObject {
+    @Published public var tabViewHidden: Bool = false
+}
 struct ContentView: View {
     
     @StateObject var viewRouter: ViewRouter
     
     @State var showPopUp = false
-    
+    @ObservedObject var tabview: tabViewModel = tabViewModel()
     var body: some View {
         GeometryReader { geometry in
             VStack {
                 Spacer()
                 switch viewRouter.currentPage {
                 case .home:
-                    HomeView()
+                    HomeView(tabview: tabview)
                 case .liked:
                     Text("Liked")
                 case .records:
@@ -28,14 +30,15 @@ struct ContentView: View {
                     Text("User")
                 }
                 Spacer()
+                if tabview.tabViewHidden == false{
                 ZStack {
                     if showPopUp {
                         PlusMenu(widthAndHeight: geometry.size.width/7)
                             .offset(y: -geometry.size.height/6)
                     }
                     HStack {
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "homekit", tabName: "Home")
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .liked, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "heart", tabName: "Liked")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .home, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "homekit", tabName: "Home")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .liked, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "heart", tabName: "Liked")
                         ZStack {
                             Circle()
                                 .foregroundColor(.white)
@@ -54,14 +57,15 @@ struct ContentView: View {
                                     showPopUp.toggle()
                                 }
                             }
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .records, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "waveform", tabName: "Records")
-                        TabBarIcon(viewRouter: viewRouter, assignedPage: .user, width: geometry.size.width/5, height: geometry.size.height/28, systemIconName: "person.crop.circle", tabName: "Account")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .records, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "waveform", tabName: "Records")
+                        TabBarIcon(viewRouter: viewRouter, assignedPage: .user, width: geometry.size.width/5, height: geometry.size.height/30, systemIconName: "person.crop.circle", tabName: "Account")
                     }
-                        .frame(width: geometry.size.width, height: geometry.size.height/8)
-                    .background(Color("TabBarBackground").shadow(radius: 2))
+                        .frame(width: geometry.size.width, height: geometry.size.height/10)
+                    .background(Color("TabBarBackground").shadow(radius: 1))
+                }
                 }
             }
-                .edgesIgnoringSafeArea(.bottom)
+                .edgesIgnoringSafeArea(.vertical)
         }
     }
 }
